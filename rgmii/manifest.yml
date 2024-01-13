@@ -1,9 +1,0 @@
-
-
-rtl_dependencies:
-  - name: "hdl/rgmii_rx.sv"
-
-sim_dependencies:
-  - name: "sim/test_rgmii.py"
-  - name: "sim/rgmii.py"
-  - name: "validmonitor.py"
