@@ -1,0 +1,56 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Thu May 18 22:41:39 2023
+[*]
+[dumpfile] "C:\Users\mfall\Desktop\sandbox\primitives\eth_rx_fsm\test\sim_build\eth_rx_fsm.vcd"
+[dumpfile_mtime] "Thu May 18 22:39:22 2023"
+[dumpfile_size] 23041
+[savefile] "C:\Users\mfall\Desktop\sandbox\primitives\eth_rx_fsm\test\eth_rx_fsm.gtkw"
+[timestart] 998100
+[size] 1920 1017
+[pos] -1929 88
+*-16.706343 1247700 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 197
+[signals_width] 273
+[sst_expanded] 1
+[sst_vpaned_height] 300
+@28
+eth_rx_fsm.clk
+eth_rx_fsm.rst_n
+eth_rx_fsm.byte_in_vld
+eth_rx_fsm.data_in_vld
+@22
+eth_rx_fsm.data_in[7:0]
+eth_rx_fsm.data_reg4[7:0]
+@28
+eth_rx_fsm.state[1:0]
+@24
+eth_rx_fsm.cnt[10:0]
+@23
+[color] 2
+eth_rx_fsm.data_out[7:0]
+@28
+[color] 2
+eth_rx_fsm.data_out_vld
+@22
+[color] 3
+eth_rx_fsm.ctrl[123:0]
+@28
+[color] 3
+eth_rx_fsm.ctrl_vld
+@200
+-
+-
+-
+-
+@22
+eth_rx_fsm.control[103:0]
+@28
+eth_rx_fsm.crc_vld
+@22
+eth_rx_fsm.data_reg0[7:0]
+eth_rx_fsm.data_reg1[7:0]
+eth_rx_fsm.data_reg2[7:0]
+eth_rx_fsm.data_reg3[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

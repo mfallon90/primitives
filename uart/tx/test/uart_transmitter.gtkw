@@ -1,0 +1,34 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Wed May 10 22:44:08 2023
+[*]
+[dumpfile] "C:\Users\mfall\Desktop\sandbox\primitives\uart\tx\test\sim_build\uart_transmitter.vcd"
+[dumpfile_mtime] "Wed May 10 22:43:48 2023"
+[dumpfile_size] 488508
+[savefile] "C:\Users\mfall\Desktop\sandbox\primitives\uart\tx\test\uart_transmitter.gtkw"
+[timestart] 0
+[size] 1920 1017
+[pos] -1 -1
+*-23.817074 32140000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 197
+[signals_width] 126
+[sst_expanded] 1
+[sst_vpaned_height] 300
+@28
+uart_transmitter.clk
+uart_transmitter.rst_n
+@22
+uart_transmitter.bits[3:0]
+uart_transmitter.cnt[9:0]
+@25
+uart_transmitter.data_in[7:0]
+@28
+uart_transmitter.data_in_rdy
+uart_transmitter.data_in_vld
+uart_transmitter.state
+@22
+uart_transmitter.temp[11:0]
+@28
+uart_transmitter.uart_tx
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,0 +1,45 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Fri May 19 00:25:51 2023
+[*]
+[dumpfile] "C:\Users\mfall\Desktop\sandbox\primitives\fifo\test\sim_build\fifo.vcd"
+[dumpfile_mtime] "Fri May 19 00:23:59 2023"
+[dumpfile_size] 60829
+[savefile] "C:\Users\mfall\Desktop\sandbox\primitives\fifo\test\fifo.gtkw"
+[timestart] 0
+[size] 1920 1017
+[pos] -1929 10
+*-20.469957 8198000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 197
+[signals_width] 181
+[sst_expanded] 1
+[sst_vpaned_height] 300
+@28
+fifo.clk
+fifo.rst_n
+@c00200
+-fifo.wr_ptr
+@1401200
+-group_end
+@24
+fifo.wr_ptr_reg[10:0]
+fifo.wr_data[7:0]
+@28
+fifo.wr_rdy
+fifo.wr_vld
+fifo.wr_en
+fifo.wr_full
+@24
+[color] 2
+fifo.rd_data[7:0]
+@28
+[color] 2
+fifo.rd_rdy
+[color] 2
+fifo.rd_vld
+[color] 2
+fifo.rd_en
+[color] 2
+fifo.rd_empty
+[pattern_trace] 1
+[pattern_trace] 0

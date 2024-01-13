@@ -1,0 +1,92 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Tue May 09 00:38:05 2023
+[*]
+[dumpfile] "C:\Users\mfall\Documents\HDL\primitives\axi\test\sim_build\axil_slave_if.vcd"
+[dumpfile_mtime] "Tue May 09 00:31:13 2023"
+[dumpfile_size] 97163
+[savefile] "C:\Users\mfall\Documents\HDL\primitives\axi\test\axil_slave_if.gtkw"
+[timestart] 0
+[size] 1920 1017
+[pos] -1 -1
+*-21.456800 18480000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 197
+[signals_width] 282
+[sst_expanded] 1
+[sst_vpaned_height] 300
+@28
+axil_slave_if.s_axi_aclk
+axil_slave_if.s_axi_aresetn
+[color] 2
+axil_slave_if.s_axi_awready
+[color] 2
+axil_slave_if.s_axi_awvalid
+@22
+[color] 2
+axil_slave_if.s_axi_awaddr[3:0]
+@28
+[color] 2
+axil_slave_if.s_axi_awprot[2:0]
+[color] 5
+axil_slave_if.s_axi_wready
+[color] 5
+axil_slave_if.s_axi_wvalid
+@22
+[color] 5
+axil_slave_if.s_axi_wdata[31:0]
+[color] 5
+axil_slave_if.s_axi_wstrb[3:0]
+@28
+[color] 6
+axil_slave_if.s_axi_bready
+[color] 6
+axil_slave_if.s_axi_bvalid
+[color] 6
+axil_slave_if.s_axi_bresp[1:0]
+[color] 3
+axil_slave_if.s_axi_arready
+[color] 3
+axil_slave_if.s_axi_arvalid
+@22
+[color] 3
+axil_slave_if.s_axi_araddr[3:0]
+@28
+[color] 3
+axil_slave_if.s_axi_arprot[2:0]
+axil_slave_if.s_axi_rready
+axil_slave_if.s_axi_rvalid
+@22
+axil_slave_if.s_axi_rdata[31:0]
+@28
+axil_slave_if.s_axi_rresp[1:0]
+@200
+-
+@28
+axil_slave_if.wr_data_rdy
+axil_slave_if.write_valid
+@22
+axil_slave_if.write_address[3:0]
+@28
+axil_slave_if.wr_addr_good
+@22
+axil_slave_if.write_data[31:0]
+@28
+axil_slave_if.wr_data_good
+axil_slave_if.write_resp[1:0]
+axil_slave_if.rd_data_vld
+axil_slave_if.rd_en
+@22
+axil_slave_if.read_address[3:0]
+axil_slave_if.read_data[31:0]
+@28
+axil_slave_if.read_resp[1:0]
+axil_slave_if.rd_addr_rdy
+@29
+axil_slave_if.wr_addr_rdy
+@22
+axil_slave_if.reg_0[31:0]
+axil_slave_if.reg_1[31:0]
+axil_slave_if.reg_2[31:0]
+axil_slave_if.reg_3[31:0]
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,0 +1,35 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Thu May 18 05:39:10 2023
+[*]
+[dumpfile] "C:\Users\mfall\Desktop\sandbox\primitives\crc_8\test\sim_build\crc_8.vcd"
+[dumpfile_mtime] "Thu May 18 00:07:55 2023"
+[dumpfile_size] 17354
+[savefile] "C:\Users\mfall\Desktop\sandbox\primitives\crc_8\test\crc_8.gtkw"
+[timestart] 1860100
+[size] 1918 1008
+[pos] -1928 -591
+*-16.806957 2265400 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 197
+[signals_width] 245
+[sst_expanded] 1
+[sst_vpaned_height] 297
+@22
+crc_8.P_RESIDUE
+@28
+crc_8.clk
+crc_8.rst_n
+@22
+crc_8.crc_d[31:0]
+crc_8.crc_q[31:0]
+crc_8.data[7:0]
+@28
+crc_8.crc_vld
+@29
+crc_8.byte_in_vld
+@23
+crc_8.data_in[7:0]
+@29
+crc_8.data_in_vld
+[pattern_trace] 1
+[pattern_trace] 0

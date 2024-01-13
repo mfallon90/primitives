@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1702855428" />
+    <testcase name="test_rmii_rx" classname="test_crc_8" file="/home/mfallon/Projects/fpga/primitives/crc_8/test/test_crc_8.py" lineno="75" time="0.027479887008666992" sim_time_ns="3270.001" ratio_time="118996.15886224937" />
+  </testsuite>
+</testsuites>

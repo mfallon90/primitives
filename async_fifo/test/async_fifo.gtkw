@@ -1,0 +1,65 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Fri Apr 14 00:10:27 2023
+[*]
+[dumpfile] "C:\Users\mfall\Documents\TA\new_assignments\async_fifo\test\sim_build\async_fifo.vcd"
+[dumpfile_mtime] "Fri Apr 14 00:10:08 2023"
+[dumpfile_size] 3686529
+[savefile] "C:\Users\mfall\Documents\TA\new_assignments\async_fifo\test\async_fifo.gtkw"
+[timestart] 0
+[size] 1920 1017
+[pos] -1 -1
+*-24.772661 21430000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] async_fifo.
+[sst_width] 197
+[signals_width] 225
+[sst_expanded] 1
+[sst_vpaned_height] 300
+@420
+async_fifo.P_DEPTH
+@28
+[color] 2
+async_fifo.rd_clk
+[color] 2
+async_fifo.rd_rst_n
+@24
+[color] 2
+async_fifo.rd_data[7:0]
+@28
+[color] 3
+async_fifo.rd_rdy
+[color] 3
+async_fifo.rd_vld
+[color] 2
+async_fifo.rd_en
+@24
+[color] 2
+async_fifo.rd_ptr_bin[6:0]
+@4000024
+[color] 2
+async_fifo.rd_ptr_gry[6:0]
+[color] 2
+async_fifo.sync_wr_ptr1[6:0]
+@28
+[color] 6
+async_fifo.rd_empty
+async_fifo.wr_clk
+async_fifo.wr_rst_n
+@25
+async_fifo.wr_data[7:0]
+@28
+async_fifo.wr_rdy
+async_fifo.wr_vld
+async_fifo.wr_en
+@24
+async_fifo.wr_ptr_bin[6:0]
+@4000024
+async_fifo.wr_ptr_gry[6:0]
+async_fifo.sync_rd_ptr1[6:0]
+@28
+[color] 6
+async_fifo.wr_full
+@420
+async_fifo.wr_ptr_calc.P_NUM_BITS
+[pattern_trace] 1
+[pattern_trace] 0
