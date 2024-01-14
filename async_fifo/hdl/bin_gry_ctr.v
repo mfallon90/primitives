@@ -38,6 +38,7 @@ module bin_gry_ctr #(
     )(
     // Write domain
     input   wire                        clk,
+    input   wire                        rst_n,
     input   wire                        en,
     output  wire    [P_NUM_BITS-1:0]    bin_cnt_comb,
     output  reg     [P_NUM_BITS-1:0]    bin_cnt_reg,
@@ -58,6 +59,12 @@ module bin_gry_ctr #(
     endgenerate
 
     always @(posedge clk) begin
+        if (~rst_n) begin
+            bin_cnt_reg     <= 0;
+            gry_cnt_reg     <= 0;
+        end
+
+        else begin
             bin_cnt_reg     <= bin_cnt_next;
             gry_cnt_reg     <= gry_cnt_next;
         end
