@@ -58,14 +58,12 @@ module async_fifo #(
     )(
     // Write domain
     input   wire                    wr_clk,
-    input   wire                    wr_rst_n,
     input   wire    [P_WIDTH-1:0]   wr_data,
     input   wire                    wr_vld,
     output  wire                    wr_rdy,
 
     // Read domain
     input   wire                    rd_clk,
-    input   wire                    rd_rst_n,
     output  wire    [P_WIDTH-1:0]   rd_data,
     output  wire                    rd_vld,
     input   wire                    rd_rdy
@@ -109,12 +107,6 @@ module async_fifo #(
     /////////////////////////////////////////////////////
 
     always @(posedge wr_clk) begin
-        if (~wr_rst_n) begin
-            sync_rd_ptr0    <= 0;
-            sync_rd_ptr1    <= 0;
-        end
-
-        else begin
             sync_rd_ptr0    <= rd_ptr_gry;
             sync_rd_ptr1    <= sync_rd_ptr0;
         end
@@ -125,12 +117,6 @@ module async_fifo #(
     //////////////////////////////////////////////////////
     
     always @(posedge rd_clk) begin
-        if (~rd_rst_n) begin
-            sync_wr_ptr0    <= 0;
-            sync_wr_ptr1    <= 0;
-        end
-
-        else begin
             sync_wr_ptr0    <= wr_ptr_gry;
             sync_wr_ptr1    <= sync_wr_ptr0;
         end
@@ -161,7 +147,6 @@ module async_fifo #(
             .P_NUM_BITS (`PTR_BITS+1))
         wr_ptr_calc (
             .clk            (wr_clk),
-            .rst_n          (wr_rst_n),
             .en             (wr_en),
             .bin_cnt_reg    (wr_ptr_bin),
             .gry_cnt_reg    (wr_ptr_gry)
@@ -175,7 +160,6 @@ module async_fifo #(
             .P_NUM_BITS (`PTR_BITS+1))
         rd_ptr_calc (
             .clk            (rd_clk),
-            .rst_n          (rd_rst_n),
             .en             (rd_en),
             .bin_cnt_comb   (rd_ptr_bin),
             .gry_cnt_reg    (rd_ptr_gry)
