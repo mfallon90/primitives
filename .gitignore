@@ -3,3 +3,4 @@
 build/
 *.gtkw
 **/__pycache__
+**/sim_build/
