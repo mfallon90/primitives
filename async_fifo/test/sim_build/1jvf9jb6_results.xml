@@ -1,6 +1,0 @@
-<testsuites name="results">
-  <testsuite name="all" package="all">
-    <property name="random_seed" value="1702855457" />
-    <testcase name="test_async_fifo" classname="test_async_fifo" file="/home/mfallon/Projects/fpga/primitives/async_fifo/test/test_async_fifo.py" lineno="138" time="4.444681882858276" sim_time_ns="202430.001" ratio_time="45544.31708165844" />
-  </testsuite>
-</testsuites>
