@@ -44,8 +44,8 @@ module delay #(
         end
     endgenerate
 
-    initial begin
-        $dumpfile("delay.vcd");
-        $dumpvars();
-    end
+//    initial begin
+//        $dumpfile("delay.vcd");
+//        $dumpvars();
+//    end
 endmodule
