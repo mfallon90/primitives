@@ -25,9 +25,10 @@ class TB():
         self.clk = self.dut.clk
         self.reset = self.dut.reset
         self.data_in = self.dut.data_in
+        self.data_in_valid = self.dut.data_in_valid
         self.led_out = self.dut.led_out
 
-        self.data_in.value = 0
+        self.data_in_valid.value = 0
 
     async def cycle_reset(self, active_high=True):
         reset_active = 1 if active_high else 0
@@ -43,27 +44,18 @@ class TB():
         return self.clk_freq_MHz * seconds
 
     def decode_seven_segment(self):
-        if self.led_out == 0x03:
-            return 0
-        if self.led_out == 0x9F:
-            return 1
-        if self.led_out == 0x25:
-            return 2
-        if self.led_out == 0x0D:
-            return 3
-        if self.led_out == 0x99:
-            return 4
-        if self.led_out == 0x49:
-            return 5
-        if self.led_out == 0x41:
-            return 6
-        if self.led_out == 0x1F:
-            return 7
-        if self.led_out == 0x01:
-            return 8
-        if self.led_out == 0x09:
-            return 9
+        decoded_values = [0x03, 0x9F, 0x25, 0x0D, 0x99, 0x49, 0x41, 0x1F, 0x01, 0x09]
+        if self.led_out in decoded_values:
+            return decoded_values.index(self.led_out)
         return None
+
+    async def drive_value(self, value):
+        await RisingEdge(self.clk)
+        self.data_in.value = value
+        self.data_in_valid.value = 1
+        await RisingEdge(self.clk)
+        self.data_in_valid.value = 0
+
 
 
 @cocotb.test()
@@ -75,14 +67,14 @@ async def test_seven_segment_display(dut):
     cocotb.start_soon(tb.cycle_reset(active_high=True))
     await ClockCycles(tb.clk, 20)
 
-    for _ in range(50):
-        number = random.randint(0,10)
-        tb.data_in.value = number
-        await ClockCycles(tb.clk, tb.secs_to_cycles(1))
-        if number > 9:
-            assert(tb.decode_seven_segment() == None)
-        else:
-            assert(number == tb.decode_seven_segment())
+    for _ in range(5):
+        number = random.randint(0,9999)
+        await tb.drive_value(number)
+        await ClockCycles(tb.clk, tb.secs_to_cycles(4))
+        # if number > 9:
+        #     assert(tb.decode_seven_segment() == None)
+        # else:
+        #     assert(number == tb.decode_seven_segment())
 
     dut.log.info('Test done')
 

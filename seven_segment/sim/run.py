@@ -19,6 +19,7 @@ def test(top, test):
     cocotb_test.simulator.run(
         verilog_sources=[
             os.path.join(hdl_dir,"seven_segment_display.sv"),
+            os.path.join(hdl_dir,"double_dabble.sv"),
         ],
         toplevel=top,
         module=test
