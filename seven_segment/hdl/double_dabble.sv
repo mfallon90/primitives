@@ -4,7 +4,7 @@ module double_dabble #(
     parameter NUM_BITS = 14
 ) (
     input  wire                 clk,
-    input  wire                 rst,
+    input  wire                 reset,
     input  wire  [NUM_BITS-1:0] binary_in,
     input  wire                 binary_in_valid,
     output logic [15:0]         packed_bcd_out,
@@ -27,7 +27,7 @@ module double_dabble #(
     assign packed_bcd_out = pckd_bcd;
     
     always_ff @(posedge clk) begin
-        if(rst == 1) begin
+        if(reset == 1) begin
             state                <= IDLE;
             packed_bcd_out_valid <= '0;
             bin                  <= 'x;
@@ -49,7 +49,7 @@ module double_dabble #(
 
                 SHIFT: begin
                     state       <=  CHECK_LP;
-                    pckd_bcd    <=  pckd_bcd << 1;
+                    pckd_bcd    <= {pckd_bcd[14:0], bin[NUM_BITS-1]};
                     bin         <=  bin << 1;
                     count       <=  count + 1;
                 end
@@ -64,10 +64,10 @@ module double_dabble #(
 
                 ADD: begin
                     state <= SHIFT;
-                    if(pckd_bcd[15:12]>4) begin pckd_bcd[15:12] <= pckd_bcd[15:12]+3 end;
-                    if(pckd_bcd[11:8]>4)  begin pckd_bcd[11:8]  <= pckd_bcd[11:8]+3  end;
-                    if(pckd_bcd[7:4]>4)   begin pckd_bcd[7:4]   <= pckd_bcd[7:4]+3   end;
-                    if(pckd_bcd[3:0]>4)   begin pckd_bcd[3:0]   <= pckd_bcd[3:0]+3   end;
+                    if (pckd_bcd[15:12]>4) begin pckd_bcd[15:12] <= pckd_bcd[15:12]+3; end
+                    if (pckd_bcd[11:8]>4)  begin pckd_bcd[11:8]  <= pckd_bcd[11:8]+3;  end
+                    if (pckd_bcd[7:4]>4)   begin pckd_bcd[7:4]   <= pckd_bcd[7:4]+3;   end
+                    if (pckd_bcd[3:0]>4)   begin pckd_bcd[3:0]   <= pckd_bcd[3:0]+3;   end
                 end
 
                 DONE: begin
