@@ -1,14 +1,14 @@
 `timescale 1ns / 1ps
-`define DATA_BITS ((HEX == 1) ? 16 : $clog2(9999))
 
 module seven_segment_display #(
     parameter int HEX           = 0,
+    parameter int DATA_BITS     = $clog2(9999),
     parameter int CLK_FREQ      = 125, //MHz
     parameter int SIM           = 1
     )(
     input  wire                   clk,
     input  wire                   reset,
-    input  wire  [`DATA_BITS-1:0] data_in,
+    input  wire  [DATA_BITS-1:0]  data_in,
     input  wire                   data_in_valid,
     output logic [3:0]            enable,
     output logic [7:0]            led_out
@@ -18,20 +18,13 @@ module seven_segment_display #(
     localparam int CLOCK_CYCLES  = TARGET_PERIOD*CLK_FREQ*100;
     localparam int COUNTER_BITS  = SIM ? 8 : $clog2(CLOCK_CYCLES)+2;
 
-    typedef struct packed {
-        logic [3:0] bcd_3;
-        logic [3:0] bcd_2;
-        logic [3:0] bcd_1;
-        logic [3:0] bcd_0;
-    } bcd_packed_t;
-
-    bcd_packed_t packed_bcd;
-    bcd_packed_t packed_bcd_reg;
+    logic [15:0] packed_bcd;
+    logic [15:0] packed_bcd_reg;
     logic [3:0]  bcd;
     logic        packed_bcd_valid;
 
     double_dabble #(
-        .NUM_BITS (`DATA_BITS)
+        .NUM_BITS (DATA_BITS)
     ) i_double_dabble (
         .clk                  (clk),
         .reset                (reset),
@@ -64,13 +57,6 @@ module seven_segment_display #(
         enable = '1;
         enable[enable_select] = 1'b0;
         bcd = packed_bcd_reg[4*(1+enable_select)-1-:4];
-
-        // case (enable_select)
-        //     2'b00: bcd = packed_bcd.bcd_0;
-        //     2'b01: bcd = packed_bcd.bcd_1;
-        //     2'b10: bcd = packed_bcd.bcd_2;
-        //     2'b11: bcd = packed_bcd.bcd_3;
-        // endcase
 
         if (HEX == 0) begin
             case (bcd)
@@ -115,4 +101,5 @@ module seven_segment_display #(
    end
 
 endmodule
+
 
