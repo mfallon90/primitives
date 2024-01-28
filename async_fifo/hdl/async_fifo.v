@@ -109,15 +109,8 @@ module async_fifo #(
     /////////////////////////////////////////////////////
 
     always @(posedge wr_clk) begin
-        if (~wr_rst_n) begin
-            sync_rd_ptr0    <= 0;
-            sync_rd_ptr1    <= 0;
-        end
-
-        else begin
-            sync_rd_ptr0    <= rd_ptr_gry;
-            sync_rd_ptr1    <= sync_rd_ptr0;
-        end
+        sync_rd_ptr0    <= rd_ptr_gry;
+        sync_rd_ptr1    <= sync_rd_ptr0;
     end
 
     //////////////////////////////////////////////////////
@@ -125,15 +118,8 @@ module async_fifo #(
     //////////////////////////////////////////////////////
     
     always @(posedge rd_clk) begin
-        if (~rd_rst_n) begin
-            sync_wr_ptr0    <= 0;
-            sync_wr_ptr1    <= 0;
-        end
-
-        else begin
-            sync_wr_ptr0    <= wr_ptr_gry;
-            sync_wr_ptr1    <= sync_wr_ptr0;
-        end
+        sync_wr_ptr0    <= wr_ptr_gry;
+        sync_wr_ptr1    <= sync_wr_ptr0;
     end
 
     ////////////////////////////////////
@@ -181,10 +167,9 @@ module async_fifo #(
             .gry_cnt_reg    (rd_ptr_gry)
         );
 
-    // initial begin
-    //     $dumpfile("async_fifo.vcd");
-    //     $dumpvars();
-    // end
-
+    initial begin
+        $dumpfile("async_fifo.vcd");
+        $dumpvars();
+    end
 
 endmodule
