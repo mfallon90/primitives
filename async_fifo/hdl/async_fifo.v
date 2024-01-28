@@ -75,23 +75,23 @@ module async_fifo #(
     //    Write Domain Signals    //
     ////////////////////////////////
 
-    wire    [`PTR_BITS:0]   wr_ptr_bin;
-    wire    [`PTR_BITS:0]   wr_ptr_gry;
-    reg     [`PTR_BITS:0]   sync_rd_ptr0;
-    reg     [`PTR_BITS:0]   sync_rd_ptr1;
-    wire                    wr_full;
-    wire                    wr_en;
+    wire                                 wr_full;
+    wire                                 wr_en;
+    wire                 [`PTR_BITS:0]   wr_ptr_bin;
+    wire                 [`PTR_BITS:0]   wr_ptr_gry;
+ (* keep = "true" *) reg [`PTR_BITS:0]   sync_rd_ptr0;
+ (* keep = "true" *) reg [`PTR_BITS:0]   sync_rd_ptr1;
 
     ///////////////////////////////
     //    Read Domain Signals    //
     ///////////////////////////////
 
-    wire    [`PTR_BITS:0]   rd_ptr_bin;
-    wire    [`PTR_BITS:0]   rd_ptr_gry;
-    reg     [`PTR_BITS:0]   sync_wr_ptr0;
-    reg     [`PTR_BITS:0]   sync_wr_ptr1;
-    wire                    rd_empty;
-    wire                    rd_en;
+    wire                                 rd_empty;
+    wire                                 rd_en;
+    wire                 [`PTR_BITS:0]   rd_ptr_bin;
+    wire                 [`PTR_BITS:0]   rd_ptr_gry;
+ (* keep = "true" *) reg [`PTR_BITS:0]   sync_wr_ptr0;
+ (* keep = "true" *) reg [`PTR_BITS:0]   sync_wr_ptr1;
 
     //////////////////////////////////
     //    Concurrent Assignments    //
