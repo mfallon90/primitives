@@ -56,7 +56,7 @@ module seven_segment_display #(
     always_comb begin
         enable = '1;
         enable[enable_select] = 1'b0;
-        bcd = packed_bcd_reg[4*(1+enable_select)-1-:4];
+        bcd = packed_bcd_reg[16-(4*enable_select)-1-:4];
 
         if (HEX == 0) begin
             case (bcd)
